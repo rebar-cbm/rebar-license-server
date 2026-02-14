@@ -9,13 +9,9 @@ const app = express();
 //  ⚙️ CORS - מאפשר גישה מדף הנחיתה
 // ═══════════════════════════════════════════════════════════
 app.use(cors({
-  origin: [
-    process.env.FRONTEND_URL || 'https://your-site.onrender.com',
-    'http://localhost:3000',
-    'http://localhost:5500'
-  ],
-  methods: ['GET', 'POST'],
-  credentials: true
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());
